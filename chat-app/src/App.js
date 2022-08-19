@@ -2,10 +2,11 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import { auth } from "./firebase";
 import {useAuthState}from 'react-firebase-hooks/auth'
+import Chat from "./components/Chat";
 
 const style = {
-  appContainer:`max-w-[720px] mx-auto text-center`,
-  sectionContainer: `flex flex-col h-[90vh] bg-gray-100 mt-10 shadow-xl border relative`
+  appContainer: `max-w-[728px] my-auto mx-auto text-center `,
+  sectionContainer: `flex flex-col h-[90vh] bg-gray-100 mt-10 shadow-xl border relative`,
 }
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         {/* Navbar */}
         <Navbar/>
         {/* Chat bar */}
+        {user? <Chat/> : null}
       </section>
    
     </div>
